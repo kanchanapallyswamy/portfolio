@@ -5,7 +5,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center pt-16 pb-8 bg-black relative"
+      className="min-h-screen flex items-center pt-16 pb-0 bg-black relative"
     >
       {/* Background glow effects */}
       <div className="absolute top-1/3 left-10 w-72 h-72 bg-portfolio-blue/20 rounded-full blur-3xl opacity-30 -z-10 animate-pulse"></div>

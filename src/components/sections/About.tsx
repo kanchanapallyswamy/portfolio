@@ -24,13 +24,16 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="section-spacing bg-black relative overflow-hidden">
+    <section
+      id="about"
+      className="bg-black relative overflow-hidden pt-0 mt-0"
+    >
       {/* Background elements */}
       <div className="absolute top-0 right-0 w-64 h-64 bg-portfolio-blue/10 rounded-full blur-3xl opacity-30 -z-10"></div>
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-portfolio-orange/10 rounded-full blur-3xl opacity-20 -z-10"></div>
 
       <div className="container-section">
-        <div className="flex flex-col items-center mb-12">
+        <div className="flex flex-col items-center mb-4">
           <span className="bg-gradient-to-r from-portfolio-blue/20 to-portfolio-orange/20 text-portfolio-blue px-5 py-2 rounded-full text-sm font-semibold tracking-wide shadow-md">
             🚀 About Me
           </span>
@@ -40,10 +43,17 @@ const About = () => {
           {/* Personal Bio */}
           <div className="animate-fade-in" style={{ animationDelay: "0.2s" }}>
             <div className="ml-0">
-              <h3 className="text-3xl font-extrabold mb-4 text-white tracking-wide">Who I Am</h3>
+              <h3 className="text-3xl font-extrabold mb-4 text-white tracking-wide">
+                Who I Am
+              </h3>
               <p className="text-lg text-gray-300 leading-relaxed">
-I'm a software developer with a strong focus on Java and Data Structures & Algorithms. I've solved over 700 problems on LeetCode and actively participate in coding contests to sharpen my problem-solving skills. I enjoy writing clean, efficient code and continuously challenge myself to grow as a developer. My approach is simple — stay curious, keep building, and improve one step at a time.
-
+                I'm a software developer with a strong focus on Java and Data
+                Structures & Algorithms. I've solved over 700 problems on
+                LeetCode and actively participate in coding contests to sharpen
+                my problem-solving skills. I enjoy writing clean, efficient
+                code and continuously challenge myself to grow as a developer.
+                My approach is simple — stay curious, keep building, and
+                improve one step at a time.
               </p>
             </div>
           </div>
@@ -71,7 +81,9 @@ I'm a software developer with a strong focus on Java and Data Structures & Algor
                     </div>
                     <p className="text-gray-400">{item.institution}</p>
                     <div className="flex items-center justify-between text-sm mt-2">
-                      <span className="text-portfolio-orange font-medium">{item.period}</span>
+                      <span className="text-portfolio-orange font-medium">
+                        {item.period}
+                      </span>
                       <span className="bg-portfolio-blue/20 text-portfolio-blue font-semibold px-3 py-1 rounded-full">
                         {item.score}
                       </span>
