@@ -25,8 +25,8 @@ const Navbar = () => {
       });
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navLinks = [
@@ -40,42 +40,46 @@ const Navbar = () => {
 
   const scrollToSection = (path: string, event?: React.MouseEvent) => {
     if (event) event.preventDefault();
-
     const element = document.querySelector(path);
     if (element) {
-      const offsetTop = element.getBoundingClientRect().top + window.pageYOffset;
+      const offsetTop =
+        element.getBoundingClientRect().top + window.pageYOffset;
       window.scrollTo({
         top: offsetTop - 80,
         behavior: "smooth",
       });
     }
-
     setIsMenuOpen(false);
   };
 
   return (
-    <header 
+    <header
       className={`fixed w-full top-0 left-0 z-50 transition-all duration-300 ${
-        isScrolled 
-          ? 'bg-gradient-to-r from-black via-gray-900 to-black backdrop-blur-lg shadow-xl py-3' 
-          : 'bg-transparent py-5'
+        isScrolled
+          ? "bg-gradient-to-r from-black via-gray-900 to-black backdrop-blur-lg shadow-lg py-3"
+          : "bg-transparent py-5"
       }`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
+          {/* Logo */}
           <a href="#home" className="text-3xl font-extrabold tracking-tight">
             <span className="bg-gradient-to-r from-portfolio-blue to-portfolio-orange bg-clip-text text-transparent">
               KVR
             </span>
           </a>
 
-          {/* Desktop Navigation */}
+          {/* Desktop Nav */}
           <nav className="hidden md:flex items-center space-x-10">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.path}
-                className={`text-lg font-medium transition duration-300 ease-in-out hover:text-portfolio-orange ${activeSection === link.path.substring(1) ? 'text-portfolio-orange underline underline-offset-4' : 'text-gray-300'}`}
+                className={`text-lg font-medium transition duration-300 ease-in-out hover:text-portfolio-orange ${
+                  activeSection === link.path.substring(1)
+                    ? "text-portfolio-orange underline underline-offset-4"
+                    : "text-gray-300"
+                }`}
                 onClick={(e) => scrollToSection(link.path, e)}
               >
                 {link.name}
@@ -83,7 +87,7 @@ const Navbar = () => {
             ))}
           </nav>
 
-          {/* Mobile Navigation Toggle */}
+          {/* Mobile Menu Toggle */}
           <Button
             variant="ghost"
             size="icon"
@@ -97,13 +101,17 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden bg-black/95 backdrop-blur-lg absolute top-full left-0 w-full py-6 px-6 shadow-lg border-t border-gray-800 animate-fade-in">
+          <div className="md:hidden absolute top-full left-0 w-full bg-black/95 z-40 backdrop-blur-lg py-6 px-6 border-t border-gray-800 animate-slide-down">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.path}
-                className={`block py-4 text-lg font-semibold transition-colors duration-300 ${activeSection === link.path.substring(1) ? 'text-portfolio-orange' : 'text-gray-300 hover:text-white'}`}
                 onClick={(e) => scrollToSection(link.path, e)}
+                className={`block py-4 text-lg font-semibold transition-colors duration-300 ${
+                  activeSection === link.path.substring(1)
+                    ? "text-portfolio-orange"
+                    : "text-gray-300 hover:text-white"
+                }`}
               >
                 {link.name}
               </a>
