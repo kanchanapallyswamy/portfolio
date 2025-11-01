@@ -42,7 +42,7 @@ const Hero = () => {
                 asChild
               >
                 <a
-                  href="https://drive.google.com/file/d/1O9tWwzS1RkBYRYPnpfLheXk6Mgm15kb4/view?usp=sharing"
+                  href="https://drive.google.com/file/d/14u28OTW_2W7x6DPrsmkuJDUSzA8RWV6y"
                   rel="noopener noreferrer"
                 >
                   <Download size={18} className="mr-1" /> Download Resume
